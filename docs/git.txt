@@ -11,7 +11,7 @@ git push origin master
 
 
 
-###### Publicando Azure ######
+###### Publicando Azure - Aprendendo ######
 
 --Pega as credenciais (vai fazer download de arquivo)
 Get-AzurePublishSettingsFile
@@ -19,7 +19,9 @@ Get-AzurePublishSettingsFile
 --Importa pra dentro do projeto as configs
 Import-AzurePublishSettingsFile [path to file]
 
---Publica no Azure (nome unico)
-Publish-AzureServiceProject -ServiceName "teste_04012017_1400"
+--Publica no Azure (nome unico do app service - criado como tipo node)
+Publish-AzureServiceProject -ServiceName ""
+
+fonte https://docs.microsoft.com/en-us/azure/cloud-services/cloud-services-nodejs-develop-deploy-app
 
 #############################
