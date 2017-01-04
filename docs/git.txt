@@ -1,0 +1,4 @@
+npm install node-gitignore -g
+
+git status
+git add

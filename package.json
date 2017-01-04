@@ -1,0 +1,27 @@
+{
+  "name": "NodeJS",
+  "version": "1.0.0",
+  "description": "primeiro app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andreraica/NodeAPI.git"
+  },
+  "keywords": [
+    "node",
+    "api"
+  ],
+  "author": "André Raiça",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andreraica/NodeAPI/issues"
+  },
+  "homepage": "https://github.com/andreraica/NodeAPI",
+  "dependencies": {
+    "consign": "^0.1.2",
+    "express": "^4.14.0"
+  }
+}
