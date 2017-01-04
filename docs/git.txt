@@ -2,6 +2,24 @@ npm install node-gitignore -g
 node-gitignore
 
 git status
-git add *.*
+git add *.* (git reset - caso de errado)
 
 git commit -m "xxx"
+git push origin master
+
+
+
+
+
+###### Publicando Azure ######
+
+--Pega as credenciais (vai fazer download de arquivo)
+Get-AzurePublishSettingsFile
+
+--Importa pra dentro do projeto as configs
+Import-AzurePublishSettingsFile [path to file]
+
+--Publica no Azure (nome unico)
+Publish-AzureServiceProject -ServiceName "teste_04012017_1400"
+
+#############################
