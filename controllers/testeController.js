@@ -1,13 +1,31 @@
 module.exports = function(app){
+
+  //GET
   app.get('/teste', function(req, res){
     console.log("get req.");
     res.send('Get Sucesso');
   });
 
+  //POST
   app.post('/teste', function(req, res){
 
-    var obj = req.body;
-    console.log("post: " + obj);
-    res.send('Post Sucesso');
+    req.assert("nome", "Nome é obrigatória.").notEmpty();
+    //req.assert("valor", "Valor é obrigatório e deve ser um decimal.").notEmpty().isFloat();
+    //req.assert("moeda", "Moeda é obrigatória e deve ter 3 caracteres").notEmpty().len(3,3);
+
+    var errors = req.validationErrors();
+
+    if (errors){
+      console.log("Erros de validação encontrados");
+      res.status(400).send(errors);
+      return;
+    }
+
+    var jsonBody = req.body;
+    console.log("post: " + jsonBody);
+
+    jsonBody.Situacao = "Incluido";
+
+    res.status(200).json(jsonBody);
   });
 }
