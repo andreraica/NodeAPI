@@ -1,13 +1,28 @@
+--criar arquivo de configuração para ignorar arquivos conhecidos do GIT no versionamento
 npm install node-gitignore -g
 node-gitignore
 
+--Verifica a situação dos arquivos
 git status
+
+--historico de versionamento
+ git log --oneline index.js
+
+--adiciona nos include files pra poder fazer o commit
 git add *.* (git reset - caso de errado)
 
+--COMMIT - local / PUSH - central
 git commit -m "xxx"
 git push origin master
 
+--Undo Pending Changes
+git stash -u
 
+--compare de versões
+git diff 6da8274:index.js 148da3f:index.js
+
+--voltar versão de arquivo
+ git checkout 148da3f index.js
 
 
 
