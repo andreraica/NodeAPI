@@ -4,12 +4,17 @@
 //  console.log('Servidor rodando na porta 3000.');
 //});
 
-var app = require('./config/custom-express')();
+
+
+var app = require('express')();
 var server = require('http').createServer(app);
 
 server.listen(8080, function(){
   console.log('Servidor rodando na porta 8080.');
 });
+
+
+
 
 //Padrão Azure
 //var http = require('http');
