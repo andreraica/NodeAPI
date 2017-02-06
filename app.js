@@ -1,14 +1,20 @@
+//Local
 //var app = require('./config/custom-express')();
-
 //app.listen(3000, function(){
 //  console.log('Servidor rodando na porta 3000.');
 //});
 
-var http = require('http');
+var app = require('./config/custom-express')();
+var server = require('http').createServer(app);
 
-http.createServer(function (req, res) {
+server.listen(8080, function(){
+  console.log('Servidor rodando na porta 8080.');
+});
 
-    res.writeHead(200, { 'Content-Type': 'text/html' });
-    res.end('Hello, world!');
+//Padrão Azure
+//var http = require('http');
 
-}).listen(process.env.PORT || 8080);
+//http.createServer(function (req, res) {
+//    res.writeHead(200, { 'Content-Type': 'text/html' });
+//    res.end('Hello, world!');
+//}).listen(process.env.PORT || 8080);
