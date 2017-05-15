@@ -3,8 +3,25 @@ module.exports = function(app){
   //GET
   app.get('/teste', function(req, res){
     console.log("get req.");
-    res.send('Get Sucesso');
+
+    //promisse test
+    p1.then(
+      function(p1Param){
+        res.send(p1Param);
+      }
+    )
+
   });
+
+  //caching ????
+  var p1 = new Promise(
+    function(resolve, reject){
+        setTimeout(function(){
+          resolve('Get SucessoAA ' + Math.random() * 1000);
+        }, 10000);
+    }
+  )
+
 
   //POST
   app.post('/teste', function(req, res){

@@ -13,6 +13,13 @@ module.exports = function(){
   //Obrigatoriamente logo apos o bodyParser
   app.use(expressValidator()); 
 
+  app.use(function (req, res, next) {
+      res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
+      res.header('Expires', '-1');
+      res.header('Pragma', 'no-cache');
+      next()
+  });
+
   consign()
    .include('controllers')
    .into(app);
