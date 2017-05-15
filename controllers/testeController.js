@@ -4,7 +4,24 @@ module.exports = function(app){
   app.get('/teste', function(req, res){
     console.log("get req.");
 
-    //promisse test
+    //Promise 1
+    var p1 = new Promise(
+      function(resolve, reject){
+          setTimeout(function(){
+            resolve('Get SucessoAA ' + Math.random() * 1000);
+          }, 10000);
+      }
+    )
+
+    // var p2 = new Promise(
+    //   function(resolve, reject){
+    //       setTimeout(function(){
+    //         resolve('Get SucessoBB ' + Math.random() * 1000);
+    //       }, 1000);
+    //   }
+    // )
+
+    //Promisse Test
     p1.then(
       function(p1Param){
         res.send(p1Param);
@@ -12,15 +29,6 @@ module.exports = function(app){
     )
 
   });
-
-  //caching ????
-  var p1 = new Promise(
-    function(resolve, reject){
-        setTimeout(function(){
-          resolve('Get SucessoAA ' + Math.random() * 1000);
-        }, 10000);
-    }
-  )
 
 
   //POST
