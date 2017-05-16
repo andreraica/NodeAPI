@@ -4,31 +4,33 @@ module.exports = function(app){
   app.get('/teste', function(req, res){
     console.log("get req.");
 
-    //Promise 1
-    var p1 = new Promise(
-      function(resolve, reject){
-          setTimeout(function(){
-            resolve('Get SucessoAA ' + Math.random() * 1000);
-          }, 10000);
-      }
-    )
-
-    // var p2 = new Promise(
-    //   function(resolve, reject){
-    //       setTimeout(function(){
-    //         resolve('Get SucessoBB ' + Math.random() * 1000);
-    //       }, 1000);
-    //   }
-    // )
-
     //Promisse Test
-    p1.then(
-      function(p1Param){
-        res.send(p1Param);
-      }
-    )
+    p1().then(msg => p2(res, msg));
 
   });
+
+
+  function p1 ()
+  {
+    return new Promise(
+      function(resolve, reject){
+          setTimeout(function(){
+            var msg = 'Get SucessoAA ' + Math.random() * 1000;
+            resolve(msg);
+          }, 1000);
+      })
+  }
+
+  function p2 (res, msgP1){
+    new Promise(
+      function(resolve, reject){
+          setTimeout(function(){
+            var msgFinal = msgP1 + ' Get SucessoBB ' + Math.random() * 1000;
+            res.send(msgFinal);
+            resolve();
+          }, 3000);
+      })
+  }
 
 
   //POST
