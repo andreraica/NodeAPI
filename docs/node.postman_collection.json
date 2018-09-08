@@ -14,7 +14,7 @@
 		{
 			"id": "5ba46cdd-d41f-b27c-46e2-6b6a08478e15",
 			"headers": "",
-			"url": "http://localhost:3000/teste",
+			"url": "http://localhost:3000/test",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "GET",
@@ -33,7 +33,7 @@
 		{
 			"id": "ffb47c00-d3e8-8362-bcfe-4fcff9f5b045",
 			"headers": "Content-Type: application/json\n",
-			"url": "http://localhost:3000/teste",
+			"url": "http://localhost:3000/test",
 			"pathVariables": {},
 			"preRequestScript": null,
 			"method": "POST",

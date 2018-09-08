@@ -1,5 +1,0 @@
-//install all project references
-npm install
-
-//build and play the project 
-node app.js
